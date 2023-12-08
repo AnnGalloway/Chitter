@@ -6,10 +6,32 @@
     </head>
     <body>
         <h1>Welcome to Chitter</h1>
+
+        <p>
+            <a href="/chitter/sign_up">Sign up here!</a>
+        </p>
+        <form action = "/chitter/homepage" method = "post">
+            {% if errors %}
+            <p class = "t-errors">
+                There were errors with your submission: {{errors}}
+            </p>
+            <p><a href="/chitter/homepage">return to homepage</a></p>
+            {% endif %}
+            <p>
+                <label for="content">Write your message here:<br></label>
+                <input type = "text" name = "content" id = "content">
+            </p>
+            <p>
+                <input type="submit" value="Send Peep">
+            </p>
+            <br>
+        </form>
         {% for post in posts %}
             <ul>
-                {{post.content}}<br>
-                <i>{{post.user_id}}</i>
+                <div>
+                {{post.content}} <br>
+                <i>{{post.user_id}}</i> {{post.added_on}}
+                </div>
             </ul>
         {% endfor %}
     </body>

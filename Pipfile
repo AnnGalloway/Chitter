@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 pytest = "*"
-flask = "*"
 playwright = "*"
 pytest-xprocess = "*"
 psycopg = "*"
+pytest-playwright = "*"
 
 [dev-packages]
 

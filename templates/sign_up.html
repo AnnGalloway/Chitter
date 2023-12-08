@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign up page</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Sign up here!</h1>
+        <form action = "/chitter/sign_up" method = "post">
+            {% if errors %}
+            <p class = "t-errors">
+                There were errors with your submission: {{errors}}
+            </p>
+            {% endif %}
+            <p>
+                <label for="first_name">First Name:</label>
+                <input type = "text" name = "first_name" id = "first_name">
+            </p>
+            <p>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name = "last_name" id="last_name">
+            </p>
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="text" name="password" id="password">
+            </p>
+            <p>
+                <input type="submit" value="Create Account">
+            </p>
+        </form>
+        <br>
+        <p>
+            <a href="/chitter/homepage">Return to homepage</a>
+        </p>
+    </body>
+</html>
